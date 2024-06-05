@@ -5,14 +5,24 @@
 
     <body>
         <div>
-            <form>
-                <label for="BookName">Book Name</label>
-                <input type="text" id="BookName" name="BookName"><br>
-                <label for="Author">Author(s)</label>
-                <input type="text" id="Author" name="Author"><br>
-                <label for="Publisher">Publisher</label>
-                <input type="text" id="Publisher" name="Publisher"><br>
+            <form id="testForm" method="post" action="/">
+                <div>
+                    <label for="BookName">Book Name</label>
+                    <input type="text" id="BookName" name="BookName">
+                </div>
+                <div>
+                    <label for="Author">Author(s)</label>
+                    <input type="text" id="Author" name="Author">
+                </div>
+                <div>
+                    <label for="Publisher">Publisher</label>
+                    <input type="text" id="Publisher" name="Publisher">
+                </div>
+                <div>
+                    <input type="submit" name="submit" id="submit" value="Submit">
+                </div>
             </form>
         </div>
+        <!-- <script src="D:\Tools Files\Python\AmanJaiswal\BookFinder-Hub\js\testPage.js"></script> -->
     </body>
 </html>
