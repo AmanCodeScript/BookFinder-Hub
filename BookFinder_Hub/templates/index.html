@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <script>
+        var jsondata = JSON.parse('{{ data|escapejs }}');
+    </script>
+    <script src="static/script.js"></script>
+    <title>BookFinder-Hub</title>
+</head>
+
+<body>
+    {% include "header.html" %}
+
+    <div class="form-container">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-field">
+                <label for="book">Book Name</label>
+                <input type="text" name="book" id="book">
+            </div>
+    
+            <div class="input-field">
+                <label for="author">Author Name</label>
+                <input type="text" name="author" id="author">
+            </div>
+            
+            <div class="input-field">
+                <label for="isbn">ISBN Number</label>
+                <input type="text" name="isbn" id="isbn">
+            </div>
+
+            <button type="submit">submit</button>
+        </form>
+    </div>
+
+    <hr id="line">
+
+    <div class="result-view-container">
+        
+        <div class="result-container">
+
+            {% for site in jsondata.sites %}
+
+            {% if site != null %}
+
+                <div class="site" id="site">{{site.site}}</div>
+
+                {% for i in site%}
+                
+                <div class="result">
+                    <div class="image" id="image"><img src="" alt="image"></div>
+                    <div class="description" id="desc"></div>
+                    <div class="price" id="price"></div>
+                </div>
+
+                {% endfor %}
+            {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+    
+    {% include "footer.html" %}
+</body>
+</html>
