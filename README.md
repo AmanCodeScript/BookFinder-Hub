@@ -61,3 +61,10 @@ Contains the main Django application configuration files.
 
 #### manage.py
   - Command-line utility for interacting with the Django project. It allows you to run commands such as starting the development server, running migrations, and more.
+
+
+## Notes for Collaborator
+
+- **Current Problem**: In the current `index.html` their is just single `div` of class attribute *result* which has to be dynamic, that is, the number of div has to increase as per the number of product retrieved from websites. So your task is to implement logic such that if  `2` datas are retrieved then two div of `result` is to be created and if  `3` datas are retrieved then three `result` div must be created and so on. Notify me after you complete it.
+  
+ 
