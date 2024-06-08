@@ -11,7 +11,7 @@ def testPage():
         testDict['Author'] = request.form.get('Author')
         testDict['Publisher'] = request.form.get('Publisher')
         print(testDict)
-    return render_template(r'testPage.html')
+    return render_template(r'templates\testPage.html')
 
 
 app.run(debug=True)
