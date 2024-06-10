@@ -9,6 +9,7 @@ HEADERS = {
 }
 
 
+'''
 def amazon_scrap(book="", author="", publisher=""):
     products = {'site': 'flipkart', 'items': 0, 'name': [], 'price':[], 'desc':[], 'link': []}
     route = "https://www.amazon.in/s?k="
@@ -18,7 +19,7 @@ def amazon_scrap(book="", author="", publisher=""):
         return None
     
     return None
-        
+'''      
 
 def flipkart_scrap(book="", author="", publisher=""):
     products = {'site': 'flipkart', 'items': 0, 'name': [], 'price':[], 'desc':[], 'link': []}

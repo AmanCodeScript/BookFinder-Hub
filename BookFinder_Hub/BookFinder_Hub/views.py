@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from BookFinder_Hub.functions import amazon_scrap, flipkart_scrap
+from BookFinder_Hub.functions import flipkart_scrap
 import json
 
 def home(request):
@@ -16,11 +16,11 @@ def home(request):
     except:
         print("Not assigned")
 
-    amazon = amazon_scrap(book = book, author = author, publisher = publisher)
+ #   amazon = amazon_scrap(book = book, author = author, publisher = publisher)
     flipkart = flipkart_scrap(book = book, author = author, publisher = publisher)
 
-    data = {'sites': [amazon, flipkart]}
-    data_json = json.dumps(data)
-    return render(request, 'index.html', {'data': data_json})
+    data = {'sites': [flipkart, None, flipkart, None, None, flipkart]}
+#    data_json = json.dumps(data)
+    return render(request, 'index.html', data)
 
 

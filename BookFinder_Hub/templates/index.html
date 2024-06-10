@@ -38,32 +38,25 @@
 
     <hr id="line">
 
+    {% for n in sites %}
+    {% if n != null%}
     <div class="result-view-container">
-        
+
+        <div class="site" id="site">XYZ.com</div>
+
         <div class="result-container">
-
-            {% for site in jsondata.sites %}
-
-            {% if site != null %}
-
-                <div class="site" id="site">{{site.site}}</div>
-
-                {% for i in site%}
-                
-                <div class="result">
-                    <div class="image" id="image"><img src="" alt="image"></div>
-                    <div class="description" id="desc"></div>
-                    <div class="price" id="price"></div>
-                </div>
-
-                {% endfor %}
-            {% endif %}
-
-            {% endfor %}
+            
+            <div class="result">
+                <div class="image-div"><img src="" alt="image" id="image"></div>
+                <div class="description" id="desc"></div>
+                <div class="price" id="price"></div>
+            </div>
 
         </div>
 
     </div>
+    {% endif %}
+    {% endfor %}
     
     {% include "footer.html" %}
 </body>

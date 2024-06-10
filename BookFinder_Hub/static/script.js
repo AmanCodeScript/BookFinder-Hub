@@ -1,30 +1,16 @@
-/** 
-    jsondata = {
-        'sites': [
-            {
-                'site': string,
-                'items': number,
-                'name': list,
-                'price': list,
-                'desc': list,
-                'link': list,
-            },
-        ],
-    }    
-*/
+function toggleForms() {
+    var taskSelect = document.getElementById("task-select");
+    var uploadForm = document.getElementById("upload-form");
+    var searchForm = document.getElementById("search-form");
 
-for(let key in jsondata) {
-    var n = "";
-
-    for(let i  in jsondata[key]) {
-        var s = jsondata[key][i];
-        if(s != null) {
-            n = s.site;
-            for(let j = 0; j < s.items; ++j) {
-                document.getElementById('price').innerHTML = "<p>"+ s.price[j]+"</p>";   
-            }
-        }
+    if(taskSelect.value == "select") {
+        uploadForm.style.display = "none";
+        searchForm.style.display = "none";
+    } else if (taskSelect.value == "upload") {
+        uploadForm.style.display = "block";
+        searchForm.style.display = "none";
+    } else if (taskSelect.value == "search") {
+        uploadForm.style.display = "none";
+        searchForm.style.display = "block";
     }
-
-    document.getElementById('site').innerHTML = `<p>${s.price[j]}</p>`;
 }

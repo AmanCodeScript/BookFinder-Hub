@@ -6,6 +6,7 @@
 }
 
 /*************************** Styling the header ********************************/
+
 header {
     background-color: #222;
     color: #fff;
@@ -45,7 +46,7 @@ nav ul li a:hover {
 }
 
 /******************************************************************************************************/
-/*************************** body styling ********************************/
+/*************************** Home Page Styling ********************************/
 /******************************************************************************************************/
 
 
@@ -110,38 +111,39 @@ button[type="submit"]:hover {
     margin-top: 10px; /* Adjust the spacing between the line and the text */
 }
 
-
 .result-view-container {
-    margin-top: 50px;
     width: 100%;
+    margin-top: 30px;
+    padding-bottom: 25px;
 }
 
-.site {
-    width: 100px;
-    height: 100px;
-    border: 2px solid orange;
+.result-view-container:hover {
+    cursor: pointer;
+    box-shadow: -10px -4px 12px 5px rgb(124 28 226 / 10%);
 }
 
 .result-container {
-    width: 200px;
-    height: fit-content;
+    width: 80%;
+    margin: auto;
+    padding: auto;
+    border-radius: 15px;
     overflow-x: scroll;
-    background-color: rgb(216, 218, 223);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);    margin: auto;
-    border-radius: 22px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-.site {
-    width: 100px;
-    border: 2px solid orange;
-}
-
 .result {
-    border: 0.5px solid rgb(53, 51, 51);
-    width: 100px;
+    border: 2px solid yellow;
+    min-width: 20%;
+    height: 175px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.result #image {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 
@@ -164,11 +166,143 @@ button[type="submit"]:hover {
 
 
 
-
 /******************************************************************************************************/
-/*************************** body styling end here********************************/
+/*************************** Repository Styling ********************************/
 /******************************************************************************************************/
+.repo-container {
+    max-width: 600px;
+    min-height: 80vh;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
 
+.repo-container h1{
+    text-align: center;
+}
+
+.option-menu {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.task-form {
+    margin-top: 2em;
+    width: 100%;
+    max-height: fit-content;
+    padding: auto;
+    border-radius: 0.8em;
+}
+
+.repo-form-group {
+    margin-bottom: 15px;
+}
+
+.repo-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.repo-form-group input[type="text"], .repo-form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#upload {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#upload:hover {
+    background-color: #0056b3;
+}
+
+.repo-form-group input[type="file"]::file-selector-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.repo-form-group input[type="file"]::file-selector-button:hover {
+    background-color: #0056b3;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-btn {
+    padding: 10px;
+    background-color: #5bc0de;
+    color: white;
+    border: 1px solid #5bc0de;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #31b0d5;
+}
+
+.search-results .search-message{
+    text-align: center;
+    font-size: 1.8rem;
+    opacity: 0.7;
+}
+
+.result-item {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+.result-item h3 {
+    margin: 0;
+    color: #333;
+}
+
+.result-item p {
+    margin: 5px 0;
+}
+
+.result-item a {
+    color: #5bc0de;
+    text-decoration: none;
+}
+
+.result-item a:hover {
+    text-decoration: underline;
+}
 /*************************** Styling the footer ********************************/
 footer {
     background-color: #222;
