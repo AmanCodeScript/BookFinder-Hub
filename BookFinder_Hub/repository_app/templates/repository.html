@@ -18,12 +18,12 @@
                 <select id="task-select" onchange="toggleForms()">
                     <option value="select">Select an option</option>
                     <option value="upload">Upload a File</option>
-                    <option value="search" selected>Search for a File</option>
+                    <option value="search" {%if title != None %}selected{% endif %}>Search for a File</option>
                 </select>
         </div>
 
         
-        <div id="upload-form" class="task-form" style="display: none;">
+        <div id="upload-form" class="task-form" style="display: none;"">
             <form action="#" method="post" enctype="multipart/form-data" class="repo-form">
                 {% csrf_token %}
                 <div class="repo-form-group">
@@ -40,21 +40,25 @@
             </form>
         </div>
 
-        <div id="search-form" class="task-form" style="display: block;">
-            <div class="search-container">
-                <input type="text" placeholder="Search.." name="search" class="search-input">
+        <div id="search-form" class="task-form" {%if title == null %}style="display: none;{% endif %}">
+            <form method="GET" class="search-container">
+                <input type="text" placeholder="Search.." name="search" class="search-input" required="true" autocomplete="off">
                 <button type="submit" class="search-btn">Search</button>
-            </div>
+            </form>
 
             <div class="search-results" id="search-results">
                 <div class="search-message">
-                    {% if books|length == 0 %}No result found{% else %}{{books|length}} related results found!!{% endif %}
+                    {% if title == '' or title == None %}
+                        No result found
+                    {% else %}
+                        {% if result|length == 0 %}No result found for '{{title}}'{% else %}{{result|length}} related result(s) found for '{{title}}'{% endif %}
+                    {% endif %}
                 </div>
 
-                {% for book in books %}
+                {% for i in result %}
                 <div class="result-item">
-                    <h3>Document Title 1</h3>
-                    <p>Description of Document 1. <a href="#">Download</a></p>
+                    <h3>{{i.name}}</h3>
+                    <p>Description of Document 1. <a href="{{i.file.url}}" download>Download</a></p>
                 </div>
                 {% endfor %}
             </div>

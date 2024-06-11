@@ -1,4 +1,5 @@
 function toggleForms() {
+    var searching = false;
     var taskSelect = document.getElementById("task-select");
     var uploadForm = document.getElementById("upload-form");
     var searchForm = document.getElementById("search-form");

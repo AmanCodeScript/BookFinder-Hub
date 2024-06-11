@@ -4,4 +4,4 @@ from django.db import models
 
 class Repository(models.Model):
     title = models.CharField(max_length=255)
-    pdf = models.FileField(upload_to='pdfs/')
+    file = models.FileField(upload_to='pdfs/')

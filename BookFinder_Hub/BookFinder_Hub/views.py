@@ -19,7 +19,7 @@ def home(request):
  #   amazon = amazon_scrap(book = book, author = author, publisher = publisher)
     flipkart = flipkart_scrap(book = book, author = author, publisher = publisher)
 
-    data = {'sites': [flipkart, None, flipkart, None, None, flipkart]}
+    data = {'available': False, 'sites': [flipkart, None, flipkart, None, None, flipkart]}
 #    data_json = json.dumps(data)
     return render(request, 'index.html', data)
 
